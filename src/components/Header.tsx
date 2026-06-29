@@ -60,7 +60,7 @@ function MegaMenu({
 export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur">
-      <div className="flex w-full items-center justify-between gap-5 px-5 py-3 sm:px-8 lg:px-12 xl:px-16">
+      <div className="relative flex w-full items-center justify-between gap-5 px-5 py-3 sm:px-8 lg:px-12 xl:px-16">
         <Link href="/" className="shrink-0 text-base font-bold text-slate-950">
           {site.name}
         </Link>
@@ -155,13 +155,45 @@ export function Header() {
           </Link>
         </div>
 
-        <nav className="flex items-center gap-3 text-sm font-medium text-slate-700 lg:hidden">
-          <Link href="/#services">Services</Link>
-          <Link href="/#industries">Industries</Link>
-          <Link href="/contact" className="rounded-md bg-emerald-700 px-3 py-2 text-white">
-            Contact
-          </Link>
-        </nav>
+        <details className="group relative lg:hidden">
+          <summary className="list-none cursor-pointer rounded-md border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
+            Menu
+          </summary>
+          <div className="absolute right-0 top-full z-50 mt-2 w-64 rounded-xl border border-slate-200 bg-white p-4 shadow-xl">
+            <div className="flex flex-col gap-3 text-sm font-medium text-slate-700">
+              <Link href="/#services">
+                Services
+              </Link>
+              <Link href="/#industries">
+                Industries
+              </Link>
+              <Link href="/resources/related-laws">
+                Resources
+              </Link>
+              <Link href="/resources/statutory-coverage">
+                Statutory coverage
+              </Link>
+              <Link href="/pf-esic-consultant-in-your-city">
+                Local consultant
+              </Link>
+
+              <div className="flex flex-col gap-2 border-t border-slate-200 pt-3">
+                <Link
+                  href="/services/compliance-health-check"
+                  className="rounded-md border border-slate-300 px-3 py-2 text-center font-semibold text-slate-900"
+                >
+                  Health check
+                </Link>
+                <Link
+                  href="/contact"
+                  className="rounded-md bg-emerald-700 px-3 py-2 text-center font-semibold text-white"
+                >
+                  Enquire now
+                </Link>
+              </div>
+            </div>
+          </div>
+        </details>
       </div>
     </header>
   );

@@ -212,7 +212,7 @@ export default function ContactPage() {
               Submit enquiry
             </button>
             <p className="mt-3 text-xs leading-5 text-slate-500">
-              This static version opens the visitor's email app with the form
+              This static version opens the visitor&apos;s email app with the form
               details. A backend, Google Sheet, CRM, or email API can replace it
               later.
             </p>
